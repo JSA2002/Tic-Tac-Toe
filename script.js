@@ -1,4 +1,3 @@
-console.log("Welcome to Tic Tac Toe")
 let gameover = new Audio("music/gameover.mp3");
 let select = new Audio("music/select.mp3");
 let winning = new Audio("music/winning.mp3");
@@ -31,9 +30,9 @@ const checkWin = () => {
     wins.forEach(e => {
         if ((boxtext[e[0]].innerText === boxtext[e[1]].innerText) && (boxtext[e[2]].innerText === boxtext[e[1]].innerText) && (boxtext[e[0]].innerText !== "")) {
             if (a) {
-                if(boxtext[e[0]].innerText == 'X'){
+                if (boxtext[e[0]].innerText == 'X') {
                     document.querySelector('.turn').innerText = `${b} Won`;
-                }else{
+                } else {
                     document.querySelector('.turn').innerText = `${c} Won`;
                 }
                 document.querySelector('.container').getElementsByTagName('div')[e[0]].style.backgroundColor = "rgb(206, 153, 255)";
@@ -65,11 +64,23 @@ Array.from(boxes).forEach(element => {
             if (!isgameover) {
                 document.getElementsByClassName("turn")[0].innerHTML = "Turn for " + turn;
             }
-
         }
     })
 }
 )
+let replay = document.getElementById("replay");
+replay.addEventListener("click", () => {
+    let boxtext = document.getElementsByClassName('boxtext');
+    Array.from(boxtext).forEach((e) => { e.innerText = " "; })
+    document.getElementsByClassName("turn")[0].innerHTML = "Turn for X";
+    let backColor = document.getElementsByClassName("box");
+    Array.from(backColor).forEach((e) => { e.style.backgroundColor = "#f0f8ff"; })
+    document.querySelector('.img').getElementsByTagName('img')[0].style.width = "0px";
+    isgameover = false;
+    turn = "X";
+    isover = 0;
+    a = true;
+})
 
 let reload = document.getElementById("reset");
 reload.addEventListener("click", () => {

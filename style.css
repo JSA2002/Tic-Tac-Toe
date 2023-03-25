@@ -14,8 +14,8 @@ nav{
     padding-left: 20px;
 }
 .gameContainer{
-    background-color: aliceblue;
-    width: 80%;
+    background-color: #f0f8ff;
+    width: 90%;
     height: 78vh;
     margin: auto;
     margin-top: 18px;
@@ -58,15 +58,19 @@ nav{
     margin-bottom: 15px;
     margin-top: 10px;
 }
-#reset{
-    margin: auto;
+.button{
+    display: flex;
+    justify-content: center;
+}
+.bcl{
     display: flex;
     padding: 8px 15px;
     background-color: brown;
     color: white;
     border-radius: 10px;
+    margin-left: 10px;
 }
-#reset:hover{
+.bcl:hover{
     background-color: transparent;
     color: black;
 }
